@@ -1,9 +1,9 @@
 <template>
   <div class="hello">
 
-    <li v-for="paraula in paraules">
-      {{ paraula.paraula.toUpperCase().split("")}}
-    </li>
+      <li v-for="lletra in lletres">
+        {{ lletra}}
+      </li>
   </div>
 </template>
 
@@ -11,17 +11,24 @@
   import json from '../assets/paraules'
   localStorage.setItem('paraules', JSON.stringify(json));
 
-  let data = { paraules : "paraula", lletres : []};
-
+  let p = [];
+  let l = [];
   for (let i in json) {
-    var letras = json[i].paraula.split("");
-    console.log("Paraula:" + json[i].paraula + " Lletres: " + json[i].paraula.toUpperCase().split(""));
+    let paraula = json[i].paraula;
+    let lletres = paraula.toUpperCase().split("");
+    console.log("Paraula:" + paraula + " Lletres: " + json[i].paraula.toUpperCase().split(""));
+    p.push({"paraula":paraula});
+
+    for (let e in lletres) {
+    l.push(lletres[e])
+    }
   }
 
   export default{
     data(){
       return{
-        paraules: json
+        paraules: p,
+        lletres:  l
       }
     }
   }
