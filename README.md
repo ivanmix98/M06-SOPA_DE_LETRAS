@@ -1,6 +1,6 @@
 # practicavue
 
-> Es el projecte de Vue fet per Joan Garcia
+> Es el projecte de Vue fet per Joan Garcia & Ivan Fontclara
 
 ## Build Setup
 
