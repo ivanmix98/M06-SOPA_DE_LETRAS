@@ -9,10 +9,10 @@
       <div v-show="show3" id="contenidoSopaDeLletres"></div>
     </transition>
 
-    <input v-on:click="soluciona" type="button" id="soluciona" value="Solució"/>
+    <input v-on:click="soluciona" v-show="show3" type="button" id="soluciona" value="Solució"/>
     <input v-on:click="jugar" type="button" id="jugar" value="jugar"/>
-    <button v-on:click="show = !show">Veure Creadors</button>
-    <button v-on:click="show2 = !show2">
+    <button v-show="show3" v-on:click="show = !show">Veure Creadors</button>
+    <button v-show="show3" v-on:click="show2 = !show2">
       Mode Senzill
     </button>
 

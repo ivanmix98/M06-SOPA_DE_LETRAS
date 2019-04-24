@@ -5,7 +5,7 @@
       <h4 v-if="show">joc de la sopa de lletres</h4>
     </transition>
     <button v-on:click="show = !show">
-      Toggle
+      Mostra Informació
     </button>
   </div>
 </template>
