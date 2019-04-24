@@ -2,7 +2,6 @@
   <div id="app">
     <router-link to="/"  style="color:#42b983">Home</router-link> |
     <router-link to="/paraules" style="color:#42b983">Paraules</router-link><br>
-    <img src="./assets/logo.png">
     <router-view/>
 
   </div>
