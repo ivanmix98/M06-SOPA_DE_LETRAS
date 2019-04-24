@@ -2,7 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <transition name="fade">
-      <h4 v-if="show">joc de la sopa de lletres</h4>
+      <p v-if="show">Aquest joc consisteix en el clasic joc de la sopa de lletres, troba totes les paraules per a poder guanyar el joc. Si tens dificultat
+      per completarlo, prova a premer el boto de "Mode Senzill"</p>
     </transition>
     <button class="btn btn-dark" v-on:click="show = !show">
       Mostra Informació

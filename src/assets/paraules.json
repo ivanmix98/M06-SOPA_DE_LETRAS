@@ -1,11 +1,13 @@
-["Jedi",
+[
+  "Jedi",
   "Sith",
   "Coruscant",
   "Force",
   "Naboo",
   "Mustafar",
   "Darkside",
-  "Light", "Master",
+  "Light",
+  "Master",
   "Padawan",
   "Republic",
   "CSI",
@@ -16,4 +18,5 @@
   "Ahsoka",
   "Fulcrum",
   "Grievous",
-  "Dooku"]
+  "Dooku"
+]

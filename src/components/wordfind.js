@@ -23,10 +23,6 @@
       diagonalUpBack: function(x,y,i) { return {x: x-i, y: y-i}; }
     };
 
-    // Determines if an orientation is possible given the starting square (x,y),
-    // the height (h) and width (w) of the puzzle, and the length of the word (l).
-    // Returns true if the word will fit starting at the square provided using
-    // the specified orientation.
     var checkOrientations = {
       horizontal:     function(x,y,h,w,l) { return w >= x + l; },
       horizontalBack: function(x,y,h,w,l) { return x + 1 >= l; },
@@ -38,10 +34,6 @@
       diagonalUpBack: function(x,y,h,w,l) { return (x + 1 >= l) && (y + 1 >= l); }
     };
 
-    // Determines the next possible valid square given the square (x,y) was ]
-    // invalid and a word lenght of (l).  This greatly reduces the number of
-    // squares that must be checked. Returning {x: x+1, y: y} will always work
-    // but will not be optimal.
     var skipOrientations = {
       horizontal:     function(x,y,l) { return {x: 0,   y: y+1  }; },
       horizontalBack: function(x,y,l) { return {x: l-1, y: y    }; },
@@ -53,20 +45,11 @@
       diagonalUpBack: function(x,y,l) { return {x: l-1, y: x>=l-1?y+1:y  }; }
     };
 
-    /**
-     * Initializes the puzzle and places words in the puzzle one at a time.
-     *
-     * Returns either a valid puzzle with all of the words or null if a valid
-     * puzzle was not found.
-     *
-     * @param {[String]} words: The list of words to fit into the puzzle
-     * @param {[Options]} options: The options to use when filling the puzzle
-     */
+
     var fillPuzzle = function (words, options) {
 
       var puzzle = [], i, j, len;
 
-      // initialize the puzzle with blanks
       for (i = 0; i < options.height; i++) {
         puzzle.push([]);
         for (j = 0; j < options.width; j++) {
@@ -74,10 +57,8 @@
         }
       }
 
-      // add each word into the puzzle one at a time
       for (i = 0, len = words.length; i < len; i++) {
         if (!placeWordInPuzzle(puzzle, options, words[i])) {
-          // if a word didn't fit in the puzzle, give up
           return null;
         }
       }
