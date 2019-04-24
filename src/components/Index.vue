@@ -4,7 +4,7 @@
     <transition name="fade">
       <h4 v-if="show">joc de la sopa de lletres</h4>
     </transition>
-    <button v-on:click="show = !show">
+    <button class="btn btn-dark" v-on:click="show = !show">
       Mostra Informació
     </button>
   </div>
